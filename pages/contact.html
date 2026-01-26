@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Moksh Delights - Get in touch with us for orders, inquiries, or feedback about our authentic Indian pickles and spices.">
+    <meta name="keywords" content="contact Moksh Delights, order pickles, spices inquiry, WhatsApp, phone contact">
+    <meta name="author" content="Moksh Delights">
+    <title>Contact Us - Moksh Delights | Order Authentic Pickles & Spices</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Moksh Delights - Order Authentic Indian Pickles & Spices">
+    <meta property="og:description" content="Get in touch with us via phone, WhatsApp, or email to order our products or send your feedback.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mokshdelights.com/contact">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- ===========================
+         HEADER & NAVIGATION
+         =========================== -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo logo-image">
+                <img src="../images/moksh-logo.jpeg" alt="Moksh Delights Logo" class="logo-img">
+                <span class="logo-text">Moksh Delights</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===========================
+         HERO SECTION - CONTACT
+         =========================== -->
+    <section class="hero" style="padding: 4rem 2rem;">
+        <div class="hero-content">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you. Reach out for orders, inquiries, or feedback</p>
+        </div>
+    </section>
+
+    <!-- ===========================
+         QUICK CONTACT SECTION
+         =========================== -->
+    <section class="featured-products">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Multiple ways to reach us - choose what's convenient</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <!-- Phone -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-red); text-align: center;">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">📞</p>
+                <h3 style="color: var(--dark-brown); margin-bottom: 0.5rem;">Call Us</h3>
+                <p style="color: #555; margin-bottom: 1rem;">Direct call for quick inquiries</p>
+                <a href="tel:7738772241" style="color: var(--primary-red); text-decoration: none; font-weight: 600; font-size: 1.1rem;">+91 7738772241</a>
+            </div>
+
+            <!-- WhatsApp -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow); border-left: 4px solid #25d366; text-align: center;">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">💬</p>
+                <h3 style="color: var(--dark-brown); margin-bottom: 0.5rem;">WhatsApp</h3>
+                <p style="color: #555; margin-bottom: 1rem;">Message us anytime for orders</p>
+                <a href="https://wa.me/917738772241" target="_blank" style="color: #25d366; text-decoration: none; font-weight: 600; font-size: 1.1rem;">Message on WhatsApp</a>
+            </div>
+
+            <!-- Email -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow); border-left: 4px solid var(--earth-green); text-align: center;">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">✉️</p>
+                <h3 style="color: var(--dark-brown); margin-bottom: 0.5rem;">Email Us</h3>
+                <p style="color: #555; margin-bottom: 1rem;">Send us your detailed inquiry</p>
+                <a href="mailto:mokshdelights24@gmail.com" style="color: var(--earth-green); text-decoration: none; font-weight: 600; font-size: 1.1rem;">mokshdelights24@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         CONTACT FORM SECTION
+         =========================== -->
+    <section class="contact" style="max-width: 100%; padding: 4rem 2rem; margin: 0;">
+        <h2>Send Us a Message</h2>
+        <div class="contact-content" style="max-width: 900px; margin: 0 auto;">
+            <form class="contact-form" id="contactForm2" method="POST">
+                <div class="form-group">
+                    <label for="name2">Your Name *</label>
+                    <input type="text" id="name2" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email2">Email Address *</label>
+                    <input type="email" id="email2" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone2">Phone Number</label>
+                    <input type="tel" id="phone2" name="phone" placeholder="+91 XXXXXXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject2">Subject *</label>
+                    <input type="text" id="subject2" name="subject" placeholder="e.g., Product Inquiry, Order, Feedback" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message2">Message *</label>
+                    <textarea id="message2" name="message" placeholder="Tell us more about your inquiry or request..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+                <div id="formStatus2" style="margin-top: 1rem; display: none; padding: 1rem; border-radius: 5px;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===========================
+         LOCATION SECTION
+         =========================== -->
+    <section class="featured-products">
+        <h2 class="section-title">📍 Our Location</h2>
+        <p class="section-subtitle">Visit us in Saphale, Maharashtra</p>
+
+        <div style="max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow);">
+            <p style="color: #555; line-height: 1.8; font-size: 1.05rem;">
+                <strong>Moksh Delights</strong><br>
+                Saphale<br>
+                Maharashtra, India
+            </p>
+            
+            <p style="color: #666; margin-top: 1.5rem; line-height: 1.8;">
+                <strong>Owner:</strong> Devendra Yadav<br>
+                <strong>Phone:</strong> <a href="tel:7738772241" style="color: var(--primary-red); text-decoration: none;">+91 7738772241</a><br>
+                <strong>Email:</strong> <a href="mailto:mokshdelights24@gmail.com" style="color: var(--primary-red); text-decoration: none;">mokshdelights24@gmail.com</a>
+            </p>
+
+            <p style="color: #666; margin-top: 1.5rem; font-size: 0.95rem; font-style: italic;">
+                We welcome customers to visit during business hours. Please contact us in advance for visits outside regular hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================
+         BUSINESS HOURS SECTION
+         =========================== -->
+    <section class="featured-products" style="background-color: var(--cream);">
+        <h2 class="section-title">Business Hours</h2>
+
+        <div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow);">
+            <table style="width: 100%; color: #555;">
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 0.8rem; font-weight: 600;">Monday - Friday</td>
+                    <td style="padding: 0.8rem; text-align: right;">9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 0.8rem; font-weight: 600;">Saturday</td>
+                    <td style="padding: 0.8rem; text-align: right;">10:00 AM - 4:00 PM</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem; font-weight: 600;">Sunday</td>
+                    <td style="padding: 0.8rem; text-align: right;">Closed</td>
+                </tr>
+            </table>
+            
+            <p style="color: #666; margin-top: 1.5rem; font-size: 0.9rem;">
+                <strong>Note:</strong> We're available on WhatsApp and phone 24/7 for urgent inquiries and orders.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FAQ SECTION
+         =========================== -->
+    <section class="featured-products">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div style="max-width: 800px; margin: 2rem auto;">
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 1.5rem; border-left: 4px solid var(--primary-red);">
+                <h4 style="color: var(--dark-brown); margin-bottom: 0.5rem;">📦 How can I place an order?</h4>
+                <p style="color: #555;">You can place an order by calling us at +91 7738772241, messaging on WhatsApp, or emailing your requirements to mokshdelights24@gmail.com.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 1.5rem; border-left: 4px solid var(--primary-red);">
+                <h4 style="color: var(--dark-brown); margin-bottom: 0.5rem;">🚚 What are the delivery options?</h4>
+                <p style="color: #555;">We offer delivery in Maharashtra and nearby regions. Shipping costs and delivery time will be confirmed based on your location.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 1.5rem; border-left: 4px solid var(--primary-red);">
+                <h4 style="color: var(--dark-brown); margin-bottom: 0.5rem;">💳 What payment methods do you accept?</h4>
+                <p style="color: #555;">We accept cash on delivery, bank transfers, and online payment options. Contact us to discuss your preferred payment method.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 1.5rem; border-left: 4px solid var(--primary-red);">
+                <h4 style="color: var(--dark-brown); margin-bottom: 0.5rem;">🌶️ Are all products natural?</h4>
+                <p style="color: #555;">Yes! All our pickles and spices are 100% natural with no artificial preservatives, colors, or additives.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 1.5rem; border-left: 4px solid var(--primary-red);">
+                <h4 style="color: var(--dark-brown); margin-bottom: 0.5rem;">⏱️ What is the shelf life of products?</h4>
+                <p style="color: #555;">Pickles typically have a shelf life of 6 months, while spices last 12 months from the date of packing. All products are clearly labeled.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-red);">
+                <h4 style="color: var(--dark-brown); margin-bottom: 0.5rem;">🎁 Can I order in bulk or for corporate gifting?</h4>
+                <p style="color: #555;">Yes! We offer bulk orders and custom packaging for corporate gifts. Please contact us with your requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         CTA SECTION
+         =========================== -->
+    <section class="featured-products" style="background-color: var(--cream);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem;">
+            <h3 style="color: var(--dark-brown); font-size: 1.8rem; margin-bottom: 1rem;">Still have questions?</h3>
+            <p style="color: #555; margin-bottom: 2rem; font-size: 1.05rem;">Don't hesitate to reach out. We're here to help!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:7738772241" class="btn btn-primary">Call Now</a>
+                <a href="https://wa.me/917738772241" target="_blank" class="btn" style="background-color: #25d366; color: white; padding: 0.8rem 2rem; border: none; border-radius: 5px; text-decoration: none; font-weight: 600; cursor: pointer;">Message on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FLOATING CONTACT BUTTONS
+         =========================== -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/917738772241" target="_blank" class="float-btn whatsapp-btn" title="Message us on WhatsApp">
+            💬
+        </a>
+        <a href="tel:7738772241" class="float-btn phone-btn" title="Call us">
+            📞
+        </a>
+    </div>
+
+    <!-- ===========================
+         FOOTER
+         =========================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook">f</a>
+                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram">📷</a>
+                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp">💬</a>
+            </div>
+            
+            <div class="footer-contact">
+                <p class="footer-text">
+                    <strong>Moksh Delights</strong> | Saphale, Maharashtra
+                </p>
+                <p class="footer-text">
+                    <a href="tel:7738772241">📞 +91 7738772241</a> | 
+                    <a href="mailto:mokshdelights24@gmail.com">✉️ mokshdelights24@gmail.com</a>
+                </p>
+            </div>
+
+            <p class="footer-text" style="margin-top: 1.5rem; color: #999;">
+                Copyright © 2026 Moksh Delights - All Rights Reserved.<br>
+                Made with ❤️ for food lovers who value authenticity.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
