@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login and Signup - Moksh Delights">
+    <meta name="author" content="Moksh Delights">
+    <title>Login & Signup - Moksh Delights</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- ===========================
+         HEADER & NAVIGATION
+         =========================== -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo logo-image">
+                <img src="../images/moksh-logo.jpeg" alt="Moksh Delights Logo" class="logo-img">
+                <span class="logo-text">Moksh Delights</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===========================
+         AUTH CONTAINER
+         =========================== -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form active">
+                <h2>Welcome Back!</h2>
+                <p class="auth-subtitle">Login to your Moksh Delights account</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address *</label>
+                        <input 
+                            type="email" 
+                            id="login-email" 
+                            name="email" 
+                            placeholder="your@email.com" 
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password *</label>
+                        <input 
+                            type="password" 
+                            id="login-password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    
+                    <div id="login-status" class="auth-message" style="display: none; margin-top: 1rem;"></div>
+                </form>
+
+                <p class="auth-toggle">
+                    Don't have an account? <a href="#" onclick="switchForm(event)">Sign up here</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" class="auth-form">
+                <h2>Create Account</h2>
+                <p class="auth-subtitle">Join Moksh Delights community today</p>
+                
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name *</label>
+                        <input 
+                            type="text" 
+                            id="signup-name" 
+                            name="fullName" 
+                            placeholder="Enter your full name" 
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">Email Address *</label>
+                        <input 
+                            type="email" 
+                            id="signup-email" 
+                            name="email" 
+                            placeholder="your@email.com" 
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-password">Password *</label>
+                        <input 
+                            type="password" 
+                            id="signup-password" 
+                            name="password" 
+                            placeholder="Create a password (min 6 characters)" 
+                            required 
+                            minlength="6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password *</label>
+                        <input 
+                            type="password" 
+                            id="signup-confirm-password" 
+                            name="confirmPassword" 
+                            placeholder="Confirm your password" 
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                    
+                    <div id="signup-status" class="auth-message" style="display: none; margin-top: 1rem;"></div>
+                </form>
+
+                <p class="auth-toggle">
+                    Already have an account? <a href="#" onclick="switchForm(event)">Login here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FOOTER
+         =========================== -->
+        <footer>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="footer-contact">
+                <p class="footer-text">
+                    <strong>Moksh Delights</strong> | Saphale, Maharashtra
+                </p>
+                <p class="footer-text">
+                    <a href="tel:7738772241">📞 +91 7738772241</a> | 
+                    <a href="mailto:mokshdelights24@gmail.com">✉️ mokshdelights24@gmail.com</a>
+                </p>
+            </div>
+
+            <p class="footer-text" style="margin-top: 1.5rem; color: #999;">
+                Copyright © 2026 Moksh Delights - All Rights Reserved.<br>
+                Made with ❤️ for food lovers who value authenticity.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

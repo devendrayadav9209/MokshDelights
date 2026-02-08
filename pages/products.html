@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Shop authentic Indian pickles and spices from Moksh Delights. Premium quality prawn pickle, Bombay duck pickle, and fresh spices like turmeric, chilli powder, and coriander.">
@@ -33,6 +34,12 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li id="cart-nav-item" style="position: relative;">
+                        <a href="cart.html">🛒 Cart <span id="cart-count" class="cart-badge" style="display: none;">0</span></a>
+                    </li>
+                    <li id="auth-nav-item">
+                        <a href="auth.html">🔐 Login</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -58,28 +65,50 @@
         <div class="products-grid">
             <!-- Prawn Pickle -->
             <div class="product-card">
-                <div class="product-image">🦐</div>
+                <div class="product-image"><img src="../images/Prawns Pickle.png" alt="Prawn Pickle"></div>
                 <div class="product-info">
                     <span class="product-category">Pickles</span>
                     <h3 class="product-name">Prawn Pickle</h3>
                     <p class="product-description">Succulent prawn pieces in aromatic spices with a tangy finish. Perfect complement to rice, bread, or any meal.</p>
                     <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Ingredients:</strong> Prawns, mustard, fenugreek, chillies, salt, spices</p>
                     <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Shelf Life:</strong> 6 months from date of packing</p>
-                    <div class="product-price">From ₹350</div>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Prawn Pickle', 250, 300)">
+                            250gm<span class="size-price">₹300</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Prawn Pickle', 500, 600)">
+                            500gm<span class="size-price">₹600</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Prawn Pickle', 1000, 1200)">
+                            1kg<span class="size-price">₹1200</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Prawn Pickle">₹300</div>
                     <button class="btn-small" onclick="addToCart('Prawn Pickle')">Add to Cart</button>
                 </div>
             </div>
 
             <!-- Bombay Duck Pickle -->
             <div class="product-card">
-                <div class="product-image">🐟</div>
+                <div class="product-image"><img src="../images/Dried Bombil Pickle.png" alt="Dried Bombay Duck"></div>
                 <div class="product-info">
                     <span class="product-category">Pickles</span>
                     <h3 class="product-name">Dried Bombay Duck</h3>
                     <p class="product-description">Crispy dried bombay duck in traditional spices. A coastal delicacy with authentic taste and perfect crunch.</p>
                     <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Ingredients:</strong> Dried bombay duck, chillies, mustard, salt, spices</p>
                     <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Shelf Life:</strong> 6 months from date of packing</p>
-                    <div class="product-price">From ₹280</div>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Dried Bombay Duck Pickle', 250, 250)">
+                            250gm<span class="size-price">₹250</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Dried Bombay Duck Pickle', 500, 500)">
+                            500gm<span class="size-price">₹500</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Dried Bombay Duck Pickle', 1000, 1000)">
+                            1kg<span class="size-price">₹1000</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Dried Bombay Duck Pickle">₹250</div>
                     <button class="btn-small" onclick="addToCart('Dried Bombay Duck Pickle')">Add to Cart</button>
                 </div>
             </div>
@@ -87,66 +116,355 @@
     </section>
 
     <!-- ===========================
-         SPICES SECTION
+         SPICES SECTION (Updated)
          =========================== -->
     <section class="featured-products" style="background-color: var(--cream);">
         <h2 class="section-title">✨ Spices</h2>
-        <p class="section-subtitle">Fresh, fragrant spices ground to perfection</p>
+        <p class="section-subtitle">Fresh, fragrant spices and masalas</p>
 
         <div class="products-grid">
-            <!-- Red Chilli Powder -->
+            <!-- 1. Coriander Powder -->
             <div class="product-card">
-                <div class="product-image">🌶️</div>
-                <div class="product-info">
-                    <span class="product-category">Spices</span>
-                    <h3 class="product-name">Red Chilli Powder</h3>
-                    <p class="product-description">Pure ground red chillies with vibrant color and rich flavor. No additives or fillers added.</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Ingredients:</strong> 100% Red Chillies</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Shelf Life:</strong> 12 months from date of packing</p>
-                    <div class="product-price">From ₹125</div>
-                    <button class="btn-small" onclick="addToCart('Red Chilli Powder')">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Turmeric Powder -->
-            <div class="product-card">
-                <div class="product-image">✨</div>
-                <div class="product-info">
-                    <span class="product-category">Spices</span>
-                    <h3 class="product-name">Turmeric Powder</h3>
-                    <p class="product-description">Golden turmeric with warm earthy flavor. Fresh and aromatic with natural benefits.</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Ingredients:</strong> 100% Pure Turmeric</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Shelf Life:</strong> 12 months from date of packing</p>
-                    <div class="product-price">From ₹90</div>
-                    <button class="btn-small" onclick="addToCart('Turmeric Powder')">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Coriander Powder -->
-            <div class="product-card">
-                <div class="product-image">🌿</div>
+                <div class="product-image"><img src="../images/Coriander Powder.png" alt="Coriander Powder"></div>
                 <div class="product-info">
                     <span class="product-category">Spices</span>
                     <h3 class="product-name">Coriander Powder</h3>
-                    <p class="product-description">Fragrant coriander powder made from fresh seeds. Citrusy notes and perfect aroma for every dish.</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Ingredients:</strong> 100% Coriander Seeds</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Shelf Life:</strong> 12 months from date of packing</p>
-                    <div class="product-price">From ₹75</div>
+                    <p class="product-description">Fragrant coriander powder made from fresh seeds.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Coriander Powder', 250, 75)">
+                            250gm<span class="size-price">₹75</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Coriander Powder', 500, 150)">
+                            500gm<span class="size-price">₹150</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Coriander Powder', 1000, 300)">
+                            1kg<span class="size-price">₹300</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Coriander Powder">₹75</div>
                     <button class="btn-small" onclick="addToCart('Coriander Powder')">Add to Cart</button>
                 </div>
             </div>
 
-            <!-- Kashmiri Chilli Powder -->
+            <!-- 2. Turmeric Powder -->
             <div class="product-card">
-                <div class="product-image">🌶️</div>
+                <div class="product-image"><img src="../images/Turmeric Powder.png" alt="Turmeric Powder"></div>
+                <div class="product-info">
+                    <span class="product-category">Spices</span>
+                    <h3 class="product-name">Turmeric Powder</h3>
+                    <p class="product-description">Golden turmeric with warm earthy flavor.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Turmeric Powder', 250, 90)">
+                            250gm<span class="size-price">₹90</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Turmeric Powder', 500, 180)">
+                            500gm<span class="size-price">₹180</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Turmeric Powder', 1000, 360)">
+                            1kg<span class="size-price">₹360</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Turmeric Powder">₹90</div>
+                    <button class="btn-small" onclick="addToCart('Turmeric Powder')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 3. Kashmiri Chilli Powder -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Kashmiri Chilli Powder.png" alt="Kashmiri Chilli Powder"></div>
                 <div class="product-info">
                     <span class="product-category">Spices</span>
                     <h3 class="product-name">Kashmiri Chilli Powder</h3>
-                    <p class="product-description">Premium Kashmiri chillies with milder heat and beautiful deep red color. Perfect for curries and biryanis.</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Ingredients:</strong> 100% Kashmiri Chillies</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Shelf Life:</strong> 12 months from date of packing</p>
-                    <div class="product-price">From ₹125</div>
+                    <p class="product-description">Premium Kashmiri chillies with vibrant color.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Kashmiri Chilli Powder', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Kashmiri Chilli Powder', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Kashmiri Chilli Powder', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Kashmiri Chilli Powder">₹110</div>
                     <button class="btn-small" onclick="addToCart('Kashmiri Chilli Powder')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 4. Chilli Powder -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Chilli Powder.png" alt="Chilli Powder"></div>
+                <div class="product-info">
+                    <span class="product-category">Spices</span>
+                    <h3 class="product-name">Chilli Powder</h3>
+                    <p class="product-description">Pure chilli powder for everyday cooking.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Chilli Powder', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Chilli Powder', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Chilli Powder', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Chilli Powder">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Chilli Powder')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 5. Meat Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Meat Masala.png" alt="Meat Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Meat Masala</h3>
+                    <p class="product-description">Aromatic masala perfect for meat preparations.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Meat Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Meat Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Meat Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Meat Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Meat Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 6. Fish Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Fish Masala.png" alt="Fish Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Fish Masala</h3>
+                    <p class="product-description">Spice blend tailored for fish curries.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Fish Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Fish Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Fish Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Fish Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Fish Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 7. Garam Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Garam Masala.png" alt="Garam Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Garam Masala</h3>
+                    <p class="product-description">Warm, aromatic blend used in many Indian dishes.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Garam Masala', 250, 115)">
+                            250gm<span class="size-price">₹115</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Garam Masala', 500, 230)">
+                            500gm<span class="size-price">₹230</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Garam Masala', 1000, 460)">
+                            1kg<span class="size-price">₹460</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Garam Masala">₹115</div>
+                    <button class="btn-small" onclick="addToCart('Garam Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 8. Chicken Curry Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Chicken Curry Masala.png" alt="Chicken Curry Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Chicken Curry Masala</h3>
+                    <p class="product-description">Rich masala for flavorful chicken curries.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Chicken Curry Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Chicken Curry Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Chicken Curry Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Chicken Curry Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Chicken Curry Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 9. Fish Curry Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Fish Curry Masala.png" alt="Fish Curry Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Fish Curry Masala</h3>
+                    <p class="product-description">Balanced spices for traditional fish curries.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Fish Curry Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Fish Curry Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Fish Curry Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Fish Curry Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Fish Curry Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 10. Mutton Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Mutton Masala.png" alt="Mutton Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Mutton Masala</h3>
+                    <p class="product-description">Robust masala for mutton dishes.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Mutton Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Mutton Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Mutton Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Mutton Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Mutton Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 11. Pay Bhajj Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Pav Bhaji Masala.png" alt="Pav Bhaji Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Pay Bhajj Masala</h3>
+                    <p class="product-description">Regional blend for Pay Bhajj preparations.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Pay Bhajj Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Pay Bhajj Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Pay Bhajj Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Pay Bhajj Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Pay Bhajj Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 12. Kitchen King Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Kitchen King Masala.png" alt="Kitchen King Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Kitchen King Masala</h3>
+                    <p class="product-description">All-purpose masala for everyday dishes.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Kitchen King Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Kitchen King Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Kitchen King Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Kitchen King Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Kitchen King Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 13. Tandoori Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Tandoori Masala.png" alt="Tandoori Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Tandoori Masala</h3>
+                    <p class="product-description">Classic tandoori spice mix for grilling and roasting.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Tandoori Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Tandoori Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Tandoori Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Tandoori Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Tandoori Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 14. Sambhar Masala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Sambhar Masala.png" alt="Sambhar Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">Sambhar Masala</h3>
+                    <p class="product-description">Spice blend specially made for sambhar.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'Sambhar Masala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Sambhar Masala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'Sambhar Masala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-Sambhar Masala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('Sambhar Masala')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 15. GhatiMasala -->
+            <div class="product-card">
+                <div class="product-image"><img src="../images/Ghati Masala.png" alt="Ghati Masala"></div>
+                <div class="product-info">
+                    <span class="product-category">Masala</span>
+                    <h3 class="product-name">GhatiMasala</h3>
+                    <p class="product-description">Traditional mountain-style masala.</p>
+                    <div class="product-sizes">
+                        <div class="size-option active" onclick="selectSize(this, 'GhatiMasala', 250, 110)">
+                            250gm<span class="size-price">₹110</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'GhatiMasala', 500, 220)">
+                            500gm<span class="size-price">₹220</span>
+                        </div>
+                        <div class="size-option" onclick="selectSize(this, 'GhatiMasala', 1000, 440)">
+                            1kg<span class="size-price">₹440</span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="price-GhatiMasala">₹110</div>
+                    <button class="btn-small" onclick="addToCart('GhatiMasala')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -246,22 +564,22 @@
          =========================== -->
     <div class="floating-buttons">
         <a href="https://wa.me/917738772241" target="_blank" class="float-btn whatsapp-btn" title="Message us on WhatsApp">
-            💬
+            <i class="fa-brands fa-whatsapp"></i>
         </a>
         <a href="tel:7738772241" class="float-btn phone-btn" title="Call us">
-            📞
+            <i class="fa-solid fa-phone"></i>
         </a>
     </div>
 
     <!-- ===========================
          FOOTER
          =========================== -->
-    <footer>
+        <footer>
         <div class="footer-content">
             <div class="footer-socials">
-                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook">f</a>
-                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram">📷</a>
-                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp">💬</a>
+                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             
             <div class="footer-contact">
@@ -283,10 +601,7 @@
 
     <!-- JavaScript for Mobile Menu & Cart -->
     <script src="../js/main.js"></script>
-    <script>
-        function addToCart(productName) {
-            alert('Added "' + productName + '" to your cart!\n\nNote: This is a demo. To purchase, please contact us:\n📞 +91 7738772241\n💬 WhatsApp');
-        }
-    </script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>

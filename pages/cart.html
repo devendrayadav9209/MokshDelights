@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping Cart - Moksh Delights">
+    <meta name="author" content="Moksh Delights">
+    <title>Shopping Cart - Moksh Delights</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- ===========================
+         HEADER & NAVIGATION
+         =========================== -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo logo-image">
+                <img src="../images/moksh-logo.jpeg" alt="Moksh Delights Logo" class="logo-img">
+                <span class="logo-text">Moksh Delights</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li id="cart-nav-item" style="position: relative;">
+                        <a href="cart.html">🛒 Cart <span id="cart-count" class="cart-badge" style="display: none;">0</span></a>
+                    </li>
+                    <li id="auth-nav-item">
+                        <a href="auth.html">🔐 Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===========================
+         CART SECTION
+         =========================== -->
+    <section class="hero" style="padding: 4rem 2rem;">
+        <div class="hero-content">
+            <h1>Shopping Cart</h1>
+            <p>Review and manage your selected products</p>
+        </div>
+    </section>
+
+    <section class="cart-section">
+        <div class="cart-container">
+            <!-- Cart Items -->
+            <div class="cart-items-wrapper">
+                <h2>Cart Items</h2>
+                <div id="cart-items" class="cart-items-list">
+                    <!-- Items will be populated here -->
+                </div>
+                <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+                    <p>Your cart is empty</p>
+                    <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary-wrapper">
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+
+                    <div class="summary-item total">
+                        <span>Total Amount:</span>
+                        <span id="total-amount">₹0</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Total Items:</span>
+                        <span id="total-items-count">0</span>
+                    </div>
+
+                    <!-- Delivery Address Section -->
+                    <div id="address-section" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border-color); display: none;">
+                        <h3 style="color: var(--dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">Delivery Address</h3>
+                        
+                        <div class="form-group">
+                            <label for="address-full-name" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">Full Name *</label>
+                            <input type="text" id="address-full-name" placeholder="Your full name" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; margin-bottom: 0.8rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address-phone" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">Phone Number *</label>
+                            <input type="tel" id="address-phone" placeholder="+91 XXXXXXXXXX" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; margin-bottom: 0.8rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address-street" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">Street Address *</label>
+                            <input type="text" id="address-street" placeholder="House no., Street name" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; margin-bottom: 0.8rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address-city" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">City *</label>
+                            <input type="text" id="address-city" placeholder="City name" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; margin-bottom: 0.8rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address-state" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">State *</label>
+                            <input type="text" id="address-state" placeholder="State name" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; margin-bottom: 0.8rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address-zip" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">Postal Code *</label>
+                            <input type="text" id="address-zip" placeholder="Postal/ZIP code" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; margin-bottom: 0.8rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address-notes" style="color: var(--dark-brown); font-weight: 600; margin-bottom: 0.3rem; display: block;">Delivery Notes (Optional)</label>
+                            <textarea id="address-notes" placeholder="e.g., Ring bell twice, leave at gate, etc." style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 5px; min-height: 80px; resize: vertical;"></textarea>
+                        </div>
+                    </div>
+
+                    <button id="checkout-btn" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; display: none;" onclick="proceedToWhatsApp()">
+                        Buy Now on WhatsApp
+                    </button>
+
+                    <div id="checkout-message" style="display: none; margin-top: 1rem; padding: 1rem; background-color: #fff3cd; border-radius: 5px; color: #856404;">
+                        Please <a href="auth.html" style="color: #c41e3a; font-weight: bold;">login</a> to proceed with checkout
+                    </div>
+
+                    <a href="products.html" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; display: block; text-align: center;">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FLOATING CONTACT BUTTONS
+         =========================== -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/917738772241" target="_blank" class="float-btn whatsapp-btn" title="Message us on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:7738772241" class="float-btn phone-btn" title="Call us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- ===========================
+         FOOTER
+         =========================== -->
+        <footer>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="footer-contact">
+                <p class="footer-text">
+                    <strong>Moksh Delights</strong> | Saphale, Maharashtra
+                </p>
+                <p class="footer-text">
+                    <a href="tel:7738772241">📞 +91 7738772241</a> | 
+                    <a href="mailto:mokshdelights24@gmail.com">✉️ mokshdelights24@gmail.com</a>
+                </p>
+            </div>
+
+            <p class="footer-text" style="margin-top: 1.5rem; color: #999;">
+                Copyright © 2026 Moksh Delights - All Rights Reserved.<br>
+                Made with ❤️ for food lovers who value authenticity.
+            </p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

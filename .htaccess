@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Remove .html extension
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^\.]+)$ $1.html [NC,L]
+    
+    # Redirect /auth.html to /pages/auth.html
+    RewriteCond %{REQUEST_URI} ^/auth\.html$
+    RewriteRule ^auth\.html$ pages/auth.html [L]
+    
+    # Redirect /cart.html to /pages/cart.html
+    RewriteCond %{REQUEST_URI} ^/cart\.html$
+    RewriteRule ^cart\.html$ pages/cart.html [L]
+    
+    # Redirect /products.html to /pages/products.html
+    RewriteCond %{REQUEST_URI} ^/products\.html$
+    RewriteRule ^products\.html$ pages/products.html [L]
+    
+    # Redirect /about.html to /pages/about.html
+    RewriteCond %{REQUEST_URI} ^/about\.html$
+    RewriteRule ^about\.html$ pages/about.html [L]
+    
+    # Redirect /contact.html to /pages/contact.html
+    RewriteCond %{REQUEST_URI} ^/contact\.html$
+    RewriteRule ^contact\.html$ pages/contact.html [L]
+</IfModule>

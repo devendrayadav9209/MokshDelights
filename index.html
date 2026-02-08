@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Moksh Delights - Authentic Indian pickles and spices made with traditional methods and highest quality standards. Order homemade prawn pickle, dried Bombay duck pickle, and fresh spices online.">
@@ -33,6 +34,12 @@
                     <li><a href="pages/about.html">About Us</a></li>
                     <li><a href="pages/products.html">Products</a></li>
                     <li><a href="pages/contact.html">Contact Us</a></li>
+                    <li id="cart-nav-item" style="position: relative;">
+                        <a href="pages/cart.html">🛒 Cart <span id="cart-count" class="cart-badge" style="display: none;">0</span></a>
+                    </li>
+                    <li id="auth-nav-item">
+                        <a href="./pages/auth.html">🔐 Login</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -46,8 +53,8 @@
             <h1>Authentic Indian Flavors</h1>
             <p>Homemade pickles and fresh spices made with traditional methods and highest quality standards</p>
             <div class="hero-buttons">
-                <a href="pages/products.html" class="btn btn-primary">Shop Now</a>
-                <a href="pages/contact.html" class="btn btn-secondary">Contact Us</a>
+                <a href="pages/products.html" class="btn btn-primary">Shop Now  <i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="pages/contact.html" class="btn btn-secondary">Contact Us  <i class="fa-solid fa-address-book"></i></a>
             </div>
         </div>
     </section>
@@ -62,43 +69,43 @@
         <div class="products-grid">
             <!-- Prawn Pickle -->
             <div class="product-card">
-                <div class="product-image">🦐</div>
+                <div class="product-image"><img src="images/Prawns Pickle.png" alt=""></div>
                 <div class="product-info">
                     <span class="product-category">Pickles</span>
                     <h3 class="product-name">Prawn Pickle</h3>
                     <p class="product-description">Succulent prawn pieces in aromatic spices with a tangy finish. Perfect for rice and bread.</p>
-                    <div class="product-price">From ₹350</div>
+                    <div class="product-price">From ₹300</div>
                     <button class="btn-small">View Details</button>
                 </div>
             </div>
 
             <!-- Bombay Duck Pickle -->
             <div class="product-card">
-                <div class="product-image">🐟</div>
+                <div class="product-image"><img src="images/Dried Bombil Pickle.png" alt=""></div>
                 <div class="product-info">
                     <span class="product-category">Pickles</span>
                     <h3 class="product-name">Dried Bombay Duck</h3>
                     <p class="product-description">Crispy dried bombay duck in traditional spices. A coastal delicacy with authentic taste.</p>
-                    <div class="product-price">From ₹280</div>
+                    <div class="product-price">From ₹250</div>
                     <button class="btn-small">View Details</button>
                 </div>
             </div>
 
             <!-- Red Chilli Powder -->
             <div class="product-card">
-                <div class="product-image">🌶️</div>
+                <div class="product-image"><img src="images/Chilli Powder.png" alt=""></div>
                 <div class="product-info">
                     <span class="product-category">Spices</span>
                     <h3 class="product-name">Red Chilli Powder</h3>
                     <p class="product-description">Pure ground red chillies with vibrant color and rich flavor. No additives.</p>
-                    <div class="product-price">From ₹125</div>
+                    <div class="product-price">From ₹110</div>
                     <button class="btn-small">View Details</button>
                 </div>
             </div>
 
             <!-- Turmeric Powder -->
             <div class="product-card">
-                <div class="product-image">✨</div>
+                <div class="product-image"><img src="images/Turmeric Powder.png" alt=""></div>
                 <div class="product-info">
                     <span class="product-category">Spices</span>
                     <h3 class="product-name">Turmeric Powder</h3>
@@ -110,7 +117,7 @@
 
             <!-- Coriander Powder -->
             <div class="product-card">
-                <div class="product-image">🌿</div>
+                <div class="product-image"><img src="images/Coriander Powder.png" alt=""></div>
                 <div class="product-info">
                     <span class="product-category">Spices</span>
                     <h3 class="product-name">Coriander Powder</h3>
@@ -122,12 +129,12 @@
 
             <!-- Kashmiri Chilli Powder -->
             <div class="product-card">
-                <div class="product-image">🌶️</div>
+                <div class="product-image"><img src="images/Kashmiri Chilli Powder.png" alt=""></div>
                 <div class="product-info">
                     <span class="product-category">Spices</span>
                     <h3 class="product-name">Kashmiri Chilli Powder</h3>
                     <p class="product-description">Premium Kashmiri chillies with milder heat and beautiful deep red color.</p>
-                    <div class="product-price">From ₹125</div>
+                    <div class="product-price">From ₹110</div>
                     <button class="btn-small">View Details</button>
                 </div>
             </div>
@@ -174,7 +181,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about-image">🏪</div>
+            <div class="about-image"><img src="https://cdn.create.vista.com/api/media/small/269184988/stock-photo-text-sign-showing-why-choose-us-question-conceptual-photo-list-of-advantages-and-disadvantages-to" alt=""></div>
         </div>
     </section>
 
@@ -243,7 +250,7 @@
                     Saphale, Maharashtra, India</p>
                 </div>
                 <div class="contact-item">
-                    <p><strong>Owner:</strong><br>
+                    <p><strong>Contact Name:</strong><br>
                     Devendra Yadav</p>
                 </div>
                 <div class="contact-item">
@@ -297,10 +304,10 @@
          =========================== -->
     <div class="floating-buttons">
         <a href="https://wa.me/917738772241" target="_blank" class="float-btn whatsapp-btn" title="Message us on WhatsApp">
-            💬
+            <i class="fa-brands fa-whatsapp"></i>
         </a>
         <a href="tel:7738772241" class="float-btn phone-btn" title="Call us">
-            📞
+            <i class="fa-solid fa-phone"></i>
         </a>
     </div>
 
@@ -310,9 +317,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-socials">
-                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook">f</a>
-                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram">📷</a>
-                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp">💬</a>
+                <a href="https://www.facebook.com/958392964024559" target="_blank" class="social-link" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mokshdelights" target="_blank" class="social-link" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/917738772241" target="_blank" class="social-link" title="Message on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             
             <div class="footer-contact">
@@ -334,5 +341,7 @@
 
     <!-- JavaScript for Mobile Menu -->
     <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
