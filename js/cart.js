@@ -106,11 +106,11 @@ function getProductPrice(productName) {
         'Chicken Curry Masala': 440,
         'Fish Curry Masala': 440,
         'Mutton Masala': 440,
-        'Pay Bhajj Masala': 440,
+        'Pav Bhaji Masala': 440,
         'Kitchen King Masala': 440,
         'Tandoori Masala': 440,
         'Sambhar Masala': 440,
-        'GhatiMasala': 440
+        'Ghati Masala': 440
     };
     return priceMap[productName] || 0;
 }
